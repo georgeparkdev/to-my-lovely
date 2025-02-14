@@ -1,26 +1,46 @@
-﻿@inject IJSRuntime JsRuntime
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>С Валентинкой, Любимая :)</title>
+    <link
+            rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
 
-<div class="my-container">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+<div class="container">
     <div class="one">
         <h1 class="one">
             Привет
-            <span id="name">Анечка ❤️</span>
+            <span id="name">Анечка</span> ❤️
         </h1>
         <p class="two" id="greetingText">Я тебя очень люблю!</p>
     </div>
     <div class="three">
-        <p>Это Валентинка!!! :D</p>
+        <p>Это Валентинка!</p>
     </div>
     <div class="four">
-        <div class="text-box">
+        <div class="text-box" style="font-family: 'Work Sans', sans-serif;">
             <p class="hbd-chatbox">
-                С Днем Святого Валенина!! Любовь и т.д....
+                С Днем Святого Валентина!! Любви и т.д....
             </p>
             <p class="fake-btn">Отправить</p>
         </div>
     </div>
     <div class="five">
-        <p class="idea-1">Это то что я собирался сделать.</p>
+        <p class="idea-1">Это то что я хотел сделать.</p>
         <p class="idea-2">Но я передумал.</p>
         <p class="idea-3">
             Я понял, что хочу сделать что-то <strong>особенное</strong>.
@@ -31,16 +51,16 @@
             <span>:)</span>
         </p>
         <p class="idea-6">
-            @* <span>S</span> *@
-            @* <span>O</span> *@
+<!--            <span>S</span>-->
+<!--            <span>O</span>-->
             <span>И...</span>
         </p>
     </div>
     <div class="six">
         <img src="img/vector.jpg" alt="" class = "girl-dp" id="imagePath" />
         <div class="wish">
-            <h3 class="wish-hbd">С Днем Святого Валентина, Цветочек</h3>
-            <h5 id="wishText">:чмоки:</h5>
+            <h3 class="wish-hbd" style="font-family: 'Great Vibes', sans-serif;">С Днем Святого Валентина, Цветочек</h3>
+            <h5 id="wishText123">😘</h5>
         </div>
     </div>
     <div class="seven">
@@ -84,7 +104,7 @@
     </div>
     <div class="eight">
         <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
+        <circle cx="20" cy="20" r="20" />
         </svg>
         <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
             <circle cx="20" cy="20" r="20" />
@@ -112,18 +132,14 @@
         </svg>
     </div>
     <div class="nine">
-        <p>Отлично! Отпиши мне если тебе понравилось)</p>
-        <p id="replay">Или нажми сюда, чтобы проиграть еще раз!.</p>
+        <p>Отпиши мне если тебе понравилось.</p>
+        <p id="replay">Или нажми сюда, что проиграть снова.</p>
         <p class="last-smile">:)</p>
     </div>
 </div>
+</body>
 
-@code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            await JsRuntime.InvokeVoidAsync("startAnimation");
-        }
-    }
-}
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script type="text/babel" src="script/main.js"></script>
+</html>

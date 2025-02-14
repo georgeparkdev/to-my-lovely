@@ -1,5 +1,5 @@
 ﻿// Animation Timeline
-const animationTimeline = () => {    
+const animationTimeline = () => {
     // Spit chars that needs to be animated individually
     const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
     const hbd = document.getElementsByClassName("wish-hbd")[0];
@@ -28,7 +28,7 @@ const animationTimeline = () => {
 
     const tl = new TimelineMax();
 
-    tl.to(".my-container", 0.1, {
+    tl.to(".container", 0.1, {
         visibility: "visible",
     })
         .from(".one", 0.7, {
@@ -302,10 +302,4 @@ const resolveFetch = () => {
     });
 };
 
-// Ensure fetch runs, but animation is NOT triggered automatically
-resolveFetch().then(() => console.log("Fetch completed."));
-
-// Expose animation function to Blazor
-window.startAnimation = () => {
-    animationTimeline();
-};
+resolveFetch().then(animationTimeline());
