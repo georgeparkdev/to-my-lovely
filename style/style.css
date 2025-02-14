@@ -41,7 +41,7 @@ body {
 }
 
 .one {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
 }
 
 .one > img {
@@ -57,7 +57,7 @@ body {
 }
 
 .three {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .four .text-box {
@@ -89,7 +89,7 @@ body {
 }
 
 .five p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
     left: 0;
     right: 0;
@@ -102,7 +102,7 @@ body {
 }
 
 .five .idea-5 {
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 .idea-5 span,
@@ -112,7 +112,7 @@ body {
 }
 
 .idea-6 span {
-    font-size: 15rem;
+    font-size: 10rem;
 }
 
 .six {
@@ -121,8 +121,9 @@ body {
 
 .six img {
     display: inline-block;
-    max-width: 20%;
+    max-width: 230px;
     height: auto;
+    margin-bottom: 40px;
 }
 
 .six .hat {
@@ -263,7 +264,7 @@ body {
 
 @media screen and (max-width: 500px) {
     .container {
-        width: 90%;
+        width: 100%;
     }
 
     .four .text-box {
@@ -289,15 +290,15 @@ body {
     }
 
     .wish-hbd {
-        font-size: 2.3em;
+        font-size: 1.5em;
     }
 
     .wish h5 {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
 
     .nine p {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: lighter;
     }
 }
