@@ -1,7 +1,129 @@
-﻿<h3>LoveLetterStage</h3>
+﻿@inject IJSRuntime JsRuntime
+
+<div class="my-container">
+    <div class="one">
+        <h1 class="one">
+            Привет
+            <span id="name">Анечка ❤️</span>
+        </h1>
+        <p class="two" id="greetingText">Я тебя очень люблю!</p>
+    </div>
+    <div class="three">
+        <p>Это Валентинка!!! :D</p>
+    </div>
+    <div class="four">
+        <div class="text-box">
+            <p class="hbd-chatbox">
+                С Днем Святого Валенина!! Любовь и т.д....
+            </p>
+            <p class="fake-btn">Отправить</p>
+        </div>
+    </div>
+    <div class="five">
+        <p class="idea-1">Это то что я собирался сделать.</p>
+        <p class="idea-2">Но я передумал.</p>
+        <p class="idea-3">
+            Я понял, что хочу сделать что-то <strong>особенное</strong>.
+        </p>
+        <p class="idea-4">Потому что,</p>
+        <p class="idea-5">
+            Ты особенная
+            <span>:)</span>
+        </p>
+        <p class="idea-6">
+            @* <span>S</span> *@
+            @* <span>O</span> *@
+            <span>И...</span>
+        </p>
+    </div>
+    <div class="six">
+        <img src="img/vector.jpg" alt="" class = "girl-dp" id="imagePath" />
+        <div class="wish">
+            <h3 class="wish-hbd">С Днем Святого Валентина, Цветочек</h3>
+            <h5 id="wishText">:чмоки:</h5>
+        </div>
+    </div>
+    <div class="seven">
+        <div class="baloons">
+            <img src="img/balloon.svg" alt="" />
+            <!-- <img src="img/music-note.svg" alt="" /> -->
+            <img src="img/smiling.svg" />
+            <img src="img/heart.svg" />
+            <!-- <img src="img/happy.svg" alt="" /> -->
+            <img src="img/balloon.svg" alt="" />
+            <!-- <img src="img/music-note.svg" alt="" /> -->
+            <!-- <img src="img/smiling.svg" /> -->
+            <img src="img/heart.svg" />
+            <img src="img/balloon.svg" alt="" />
+            <img src="img/music-note.svg" alt="" />
+            <img src="img/heart.svg" />
+            <img src="img/balloon.svg" alt="" />
+            <!-- <img src="img/music-note.svg" alt="" /> -->
+            <!-- <img src="img/smiling.svg" /> -->
+
+            <img src="img/heart.svg" />
+            <img src="img/balloon.svg" alt="" />
+            <img src="img/heart.svg" />
+            <img src="img/heart.svg" />
+            <img src="img/music-note.svg" alt="" />
+            <img src="img/smiling.svg" />
+
+            <img src="img/happy.svg" alt="" />
+            <img src="img/balloon.svg" alt="" />
+            <img src="img/heart.svg" />
+            <!-- <img src="img/music-note.svg" alt="" /> -->
+            <!-- <img src="img/heart.svg" />
+            
+            <img src="img/happy.svg" alt="" />
+            <img src="img/balloon.svg" alt="" />
+            <img src="img/music-note.svg" alt="" /> -->
+            <img src="img/smiling.svg" />
+            <!-- <img src="img/heart.svg" /> -->
+            <!-- <img src="img/happy.svg" alt="" /> -->
+        </div>
+    </div>
+    <div class="eight">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" />
+        </svg>
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" />
+        </svg>
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" />
+        </svg>
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" />
+        </svg>
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" />
+        </svg>
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" />
+        </svg>
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" />
+        </svg>
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" />
+        </svg>
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" />
+        </svg>
+    </div>
+    <div class="nine">
+        <p>Отлично! Отпиши мне если тебе понравилось)</p>
+        <p id="replay">Или нажми сюда, чтобы проиграть еще раз!.</p>
+        <p class="last-smile">:)</p>
+    </div>
+</div>
 
 @code {
-
-    
-
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JsRuntime.InvokeVoidAsync("startAnimation");
+        }
+    }
 }

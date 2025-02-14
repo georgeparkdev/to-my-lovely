@@ -1,16 +1,10 @@
 ﻿@inherits LayoutComponentBase
 @inject IStageStateService StageState
 
-@* Required *@
 <MudThemeProvider />
 <MudPopoverProvider />
-
-@* Needed for dialogs *@
 <MudDialogProvider />
-
-@* Needed for snackbars *@
 <MudSnackbarProvider />
-
 
 <div class="d-flex justify-content-start align-items-center gap-4 mb-4 p-4 position-absolute w-100"
      style="border: 3px solid red; top: 0; left: 0; height: 40px; background: rgba(255,255,255,0.5)">
