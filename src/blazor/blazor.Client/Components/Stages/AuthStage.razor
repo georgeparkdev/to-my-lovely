@@ -1,0 +1,60 @@
+﻿@inject IAuthStageStateService AuthStageState
+
+@if (string.IsNullOrWhiteSpace(_currentStage))
+{
+    <p>loading...</p>
+}
+else
+{
+    switch (_currentStage)
+    {
+        case AuthStageStateService.InitialStage:
+            <AuthStage_Start OnYes="SetQuestionsStage" OnNo="SetErrorStage" />
+            break;
+        case AuthStageStateService.ErrorStage:
+            <AuthStage_Error />
+            break;
+        case AuthStageStateService.TryAgainStage:
+            <AuthStage_TryAgain OnTryAgain="SetQuestionsStage" />
+            break;
+        case AuthStageStateService.QuestionsStage:
+            <AuthStage_Questions OnWrongAnswer="SetTryAgainStage" OnCompleteQuestions="OnFinish" />
+            break;
+    }
+}
+
+@code {
+    [Parameter] public EventCallback OnFinish { get; set; }
+    
+    string? _currentStage;
+
+    protected override void OnInitialized()
+    {
+        var stage = AuthStageState.CurrentStage;
+        _currentStage = stage;
+    }
+
+    void SetInitialStage()
+    {
+        AuthStageState.SetInitialStage();
+        _currentStage = AuthStageState.CurrentStage;
+    }
+    
+    void SetErrorStage()
+    {
+        AuthStageState.SetErrorStage();
+        _currentStage = AuthStageState.CurrentStage;
+    }
+    
+    void SetTryAgainStage()
+    {
+        AuthStageState.SetTryAgainStage();
+        _currentStage = AuthStageState.CurrentStage;
+    }
+    
+    void SetQuestionsStage()
+    {
+        AuthStageState.SetQuestionsStage();
+        _currentStage = AuthStageState.CurrentStage;
+    }
+}

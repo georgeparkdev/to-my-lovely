@@ -1,6 +1,27 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    font-family: "Montserrat", serif;
 }
+
+.pacifico-regular {
+    font-family: "Pacifico", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hachi-maru-pop-regular {
+    font-family: "Hachi Maru Pop", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*.montserrat-<uniquifier> {*/
+/*     font-family: "Montserrat", serif;*/
+/*     font-optical-sizing: auto;*/
+/*     font-weight: <weight>;*/
+/*     font-style: normal;*/
+/* }*/
+
 
 a, .btn-link {
     color: #006bb7;
@@ -48,4 +69,145 @@ h1:focus {
 
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
+}
+
+
+
+.page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heart {
+    position: relative;
+    width: 444px;
+    height: 325px;
+    margin-top: 10px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    color: white;
+    font-weight: 800;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 220px;
+    height: 323px;
+    border-radius: 100px 100px 0 0;
+    background: red;
+}
+
+.heart::before {
+    left: 220px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-heart {
+    cursor: pointer;
+    border-radius: 30px;
+    width: 140px;
+    color: white;
+}
+
+.btn-heart-yes {
+    background: linear-gradient(90deg, #ff3131, #ff914d);
+}
+
+.btn-heart-no {
+    background: linear-gradient(90deg, #004aad, #cb6ce6);
+}
+
+.btn-try-again {
+    background: linear-gradient(90deg, #ff5757, #8c52ff);
+    cursor: pointer;
+    border-radius: 30px;
+    width: 250px;
+    color: white;
+}
+
+.btn-try-answer {
+    background: linear-gradient(90deg, #000000, #737373);
+    cursor: pointer;
+    border-radius: 30px;
+    width: 200px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+.cloud {
+    background-image: url("img/white-cloud.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    width: 480px;
+    height: 310px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
 }

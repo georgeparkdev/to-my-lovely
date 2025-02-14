@@ -1,0 +1,32 @@
+﻿<div class="page" style="background: linear-gradient(90deg, #000000, #3533cd);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="content-wrapper">
+
+                    <div class="w-100 text-center" style="color: white;">
+                        <h1>О нет!</h1>
+                        <h2>Возможно произошла какая-то ошибка....</h2>
+                    </div>
+
+
+                    <div class="w-100 d-flex justify-content-center">
+                        <div class="btn btn-try-again" @onclick="OnTryAgainClick">
+                            Попробовать еще раз
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public EventCallback OnTryAgain { get; set; }
+
+    void OnTryAgainClick()
+    {
+        OnTryAgain.InvokeAsync();
+    }
+}}

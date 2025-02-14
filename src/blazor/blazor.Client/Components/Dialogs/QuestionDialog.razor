@@ -1,0 +1,42 @@
+﻿<MudDialog>
+    <DialogContent>
+        @if (Question?.PossibleAnswers.Length == 0) // input type, otherwise select type
+        {
+            <div class="modal-body">
+                <label for="answer">Ответ:</label>
+                <input id="answer" @bind="_modalAnswer" class="input-text" />
+                <button class="btn btn-submit" @onclick="@(() => SubmitAnswer(string.Empty))">OK</button>
+            </div>
+        }
+        else
+        {
+            <div class="modal-body">
+                <label>Выберите ответ:</label>
+                @foreach (var answer in (Question?.PossibleAnswers?.OrderBy(_ => Guid.NewGuid()) ?? Enumerable.Empty<string>()))
+                {
+                    <div class="answer-block" @onclick="() => SubmitAnswer(answer)">@answer</div>
+                }
+            </div>
+        }
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [CascadingParameter] private IMudDialogInstance MudDialog { get; set; } = null!;
+
+    [Parameter] public IQuestionsStateService.Question Question { get; set; } = null!;
+    
+    private void Submit() => MudDialog.Close(DialogResult.Ok(true));
+
+    private void Cancel() => MudDialog.Cancel();
+    
+    private string _modalAnswer = string.Empty;
+    
+    private void SubmitAnswer(string answer)
+    {
+        answer = string.IsNullOrWhiteSpace(answer) ? _modalAnswer : answer;
+        MudDialog.Close(string.Equals(answer, Question.CorrectAnswer, StringComparison.CurrentCultureIgnoreCase)
+            ? DialogResult.Ok(true)
+            : DialogResult.Ok(false));
+    }
+}
